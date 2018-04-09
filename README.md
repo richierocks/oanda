@@ -27,7 +27,7 @@ To use the API, you must first register with OANDA. Follow the instructions on t
 
 Once you have registered, log in and go to the [trading dashboard](https://trade.oanda.com). Your account number is written in the top left of the screen, and looks like `100-001-1234567-001`. Make a note of this number.
 
-Navigate to "My Account" -&gt; "Manage API Access" (in the left-hand menu of you account page). Generate a personal access token, and make a note of it. It takes the form `123456789abcdef0-123456789abcdef0`.
+Navigate to the [Manage API Access](https://www.oanda.com/demo-account/tpa/personal_token) page (also avilable via "My Account"). Generate a personal access token, and make a note of it. It takes the form `123456789abcdef0-123456789abcdef0`.
 
 To store the account ID and access token for the current R session, type
 
@@ -46,5 +46,20 @@ Usage
 Currently only the pricing API, for getting currency exchange prices is supported.
 
 ``` r
+library(oanda)
 (prices <- pricing(c("EUR", "GBP"), "USD"))
+#> # A tibble: 2 x 17
+#>   type  time                bids   asks   closeout_bid closeout_ask status
+#>   <chr> <dttm>              <list> <list> <chr>        <chr>        <chr> 
+#> 1 PRICE 2018-04-09 16:26:01 <list… <list… 1.23159      1.23202      trade…
+#> 2 PRICE 2018-04-09 16:26:00 <list… <list… 1.41308      1.41377      trade…
+#> # ... with 10 more variables: tradeable <lgl>, instrument <chr>,
+#> #   units_available_default_long <chr>,
+#> #   units_available_default_short <chr>,
+#> #   units_available_open_only_long <chr>,
+#> #   units_available_open_only_short <chr>,
+#> #   units_available_reduce_first_long <chr>,
+#> #   units_available_reduce_first_short <chr>,
+#> #   units_available_reduce_only_long <chr>,
+#> #   units_available_reduce_only_short <chr>
 ```

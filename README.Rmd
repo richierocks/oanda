@@ -40,7 +40,7 @@ To use the API, you must first register with OANDA. Follow the instructions on t
 
 Once you have registered, log in and go to the [trading dashboard](https://trade.oanda.com). Your account number is written in the top left of the screen, and looks like `100-001-1234567-001`. Make a note of this number.
 
-Navigate to "My Account" -> "Manage API Access" (in the left-hand menu of you account page). Generate a personal access token, and make a note of it. It takes the form `123456789abcdef0-123456789abcdef0`.
+Navigate to the [Manage API Access](https://www.oanda.com/demo-account/tpa/personal_token) page (also avilable via "My Account"). Generate a personal access token, and make a note of it. It takes the form `123456789abcdef0-123456789abcdef0`.
 
 To store the account ID and access token for the current R session, type
 
@@ -57,6 +57,7 @@ Alternatively, use your operating system tools to set these environment variable
 
 Currently only the pricing API, for getting currency exchange prices is supported. 
 
-```r
+```{r, pricing, echo = TRUE}
+library(oanda)
 (prices <- pricing(c("EUR", "GBP"), "USD"))
 ```
