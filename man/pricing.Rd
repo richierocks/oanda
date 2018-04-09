@@ -24,7 +24,7 @@ Call the OANDA pricing API to retrieve prices of currency pairs.
 \examples{
 \donttest{
 ## Marked as don't test because an access token is needed
-  (currencies <- pricing(c("EUR", "GBP"), "USD"))
+  (prices <- pricing(c("EUR", "GBP"), "USD"))
 }
 }
 \references{

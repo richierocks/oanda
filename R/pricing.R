@@ -10,7 +10,7 @@
 #' @examples
 #' \donttest{
 #' ## Marked as don't test because an access token is needed
-#'   (currencies <- pricing(c("EUR", "GBP"), "USD"))
+#'   (prices <- pricing(c("EUR", "GBP"), "USD"))
 #' }
 #' @importFrom purrr map_df
 #' @export
